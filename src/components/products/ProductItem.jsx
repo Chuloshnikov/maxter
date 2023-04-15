@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import StarRatings from "react-star-ratings";
 import Image from 'next/image';
-import { defaultProduct } from "../../assets/images/index";
 
 
 const ProductItem = ({ product }) => {
@@ -18,7 +17,7 @@ const ProductItem = ({ product }) => {
                       }}
                     >
                       <Image
-                        src={product?.images[0] ? product?.images[0].url : defaultProduct}
+                        src={product?.images[0] ? product?.images[0].url : "https://res.cloudinary.com/duufrpcxn/image/upload/v1681585792/default_product_rydd5z.png"}
                         alt="product image"
                         height={240}
                         width={240}

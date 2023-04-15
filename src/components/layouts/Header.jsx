@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Search from './Search';
+import Image from 'next/image';
 
 const Header = () => {
   return (
@@ -10,7 +11,7 @@ const Header = () => {
         <div className="flex-shrink-0 mr-5">
           <a href="/">
             <img
-              src="../../../public/next.svg"
+              src="https://res.cloudinary.com/duufrpcxn/image/upload/v1681586344/logo_rzr2h3.png"
               height="40"
               width="120"
               alt="MAXTER"
@@ -38,7 +39,7 @@ const Header = () => {
           </Link>
           <Link href="/me">
             <div className="flex items-center mb-4 space-x-3 mt-4 cursor-pointer">
-              <img className="w-10 h-10 rounded-full" src={"logo192.png"} />
+              <img className="w-10 h-10 rounded-full" src="https://res.cloudinary.com/duufrpcxn/image/upload/v1681586314/default_nlnwpf.png"/>
               <div className="space-y-1 font-medium">
                 <p>
                   Maxon Ch
