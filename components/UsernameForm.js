@@ -7,7 +7,7 @@ const UsernameForm = () => {
     const {userInfo, status} = useUserInfo();
     const [username, setUsername] = useState();
     const router = useRouter();
-    console.log(userInfo.email)
+
 
     useEffect(() => {
         if (status === 'loading') {

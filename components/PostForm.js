@@ -1,9 +1,11 @@
 import useUserInfo from '@/hooks/useUserInfo';
+import { useSession } from 'next-auth/react';
 import { useState } from 'react';
 import axios from 'axios';
+import Avatar from './Avatar';
 
-const PostForm = () => {
-
+const PostForm = ({onPost}) => {
+    const {data:session, status} = useSession();
     const {userInfo, status: userInfoStatus} = useUserInfo();
     const [text, setText] = useState('');
 
@@ -11,6 +13,9 @@ const PostForm = () => {
         e.preventDefault();
         await axios.post('/api/posts', {text})
         setText('');
+        if(onPost) {
+            onPost();
+        }
     }
 
     if (userInfoStatus === 'loading') {
@@ -21,9 +26,7 @@ const PostForm = () => {
     <form className="mx-5" onSubmit={handlePostSubmit}>
     <div className="flex">
       <div className=" ">
-        <div className="rounded-full overflow-hidden w-12">
-          <img src={userInfo?.image} alt="avatar"/>
-        </div>
+        <Avatar src={userInfo?.image} />
       </div>
       <div className="grow pl-2">
         <textarea 
